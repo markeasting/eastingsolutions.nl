@@ -1,0 +1,12 @@
+// @use 'sass:color';
+
+$dot-grid-size: 22px;
+
+.dotted {
+    background-image: radial-gradient(
+        /* transparentize(var(--accent), 0.25) 1px, */
+        rgba(#ffffff, 0.2) 1px, 
+        transparent 0
+    );
+    background-size: $dot-grid-size $dot-grid-size;
+}
