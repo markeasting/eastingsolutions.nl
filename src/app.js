@@ -7,7 +7,7 @@ const encodedEmail = 'Y29udGFjdEBlYXN0aW5nc29sdXRpb25zLm5s'; // @contact
 const actualEmail = atob(encodedEmail);
 const mailElements = document.querySelectorAll('.mailto');
 mailElements.forEach(el => {
-    el.setAttribute('href', 'mailto:'.concat(actualEmail));
+    el.setAttribute('href', `mailto: ${actualEmail}?subject=Contact met Easting Solutions`);
     if (!el.classList.contains('customtext')) {
         el.innerHTML = actualEmail;
     }
