@@ -2,15 +2,21 @@ import * as THREE from 'three';
 import './app.scss'
 
 /* Obfuscate email addresses */
-// const encodedEmail = 'aW5mb0BlYXN0aW5nc29sdXRpb25zLm5s'; // @info
-const encodedEmail = 'Y29udGFjdEBlYXN0aW5nc29sdXRpb25zLm5s'; // @contact
-const actualEmail = atob(encodedEmail);
-const mailElements = document.querySelectorAll('.mailto');
-mailElements.forEach(el => {
-    el.setAttribute('href', `mailto: ${actualEmail}?subject=Contact met Easting Solutions`);
+// 'aW5mb0BlYXN0aW5nc29sdXRpb25zLm5s';      // info@
+// 'Y29udGFjdEBlYXN0aW5nc29sdXRpb25zLm5s'   // contact@
+const emailAddress = atob('Y29udGFjdEBlYXN0aW5nc29sdXRpb25zLm5s');
+
+document.querySelectorAll('.mailto').forEach(el => {
+    el.setAttribute('href', `mailto:${emailAddress}?subject=Contact met Easting Solutions`);
     if (!el.classList.contains('customtext')) {
-        el.innerHTML = actualEmail;
+        el.innerHTML = emailAddress;
     }
+});
+
+const phoneNumber = atob('MDYgMzEzIDg4IDM0NA==');
+document.querySelectorAll('.tel').forEach(el => {
+    el.setAttribute('href', `tel:${phoneNumber.replace('06', '+316').replace(/\s/g, '')}`);
+    el.innerHTML = phoneNumber;
 });
 
 /* --------------------------------------------------------- */
